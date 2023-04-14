@@ -1,6 +1,6 @@
-package ru.netology.i18n;
+package localization;
 
-import ru.netology.entity.Country;
+import entity.Country;
 
 public interface LocalizationService {
 
