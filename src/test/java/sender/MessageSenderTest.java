@@ -91,4 +91,16 @@ public class MessageSenderTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    void send_nullIpTest() {
+
+        Map<String, String> headers = new HashMap<String, String>();
+        headers.put(MessageSenderImpl.IP_ADDRESS_HEADER, null);
+
+        String expected = "Welcome";
+        String actual = sender.send(headers);
+        Assertions.assertTrue(actual.matches(".*\\p{IsAlphabetic}.*"));
+        Assertions.assertEquals(expected, actual);
+    }
+
 }
